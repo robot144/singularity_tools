@@ -1,0 +1,9 @@
+BootStrap: debootstrap
+OSVersion: impish
+MirrorURL: http://us.archive.ubuntu.com/ubuntu/
+# At 20211205 there was no ubuntu 21.10 (impish) library available yet.
+# And several programs were missing on earlier versions, so here we first build an
+# image for ubuntu impish
+# This step can be removed once ubuntu impish becomes available by default
+
+
