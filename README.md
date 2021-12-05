@@ -6,6 +6,10 @@ Installation of some tools on a linux cluster can be awkward, especially if you 
 
 This repository aims to make some tools available using singularity. The main focus of the tools is around geophysical fluid models and satellite data. 
 
+More info on singularity:
+- [tutorial](https://singularity-tutorial.github.io/)
+- [installation of singularity](https://sylabs.io/guides/3.5/admin-guide/installation.html) 
+
 ## Installation
 
 There are two ways to work with this repo:
@@ -26,5 +30,6 @@ and add that to the path `export PATH=$PATH:$HOME/bin`. Now you can use cdo like
 ## Packages
 
 The current list of packages is:
- - __cdo__  : cdo is a tool for working with netcdf and grib files. Other tools are included, such as eccodes, netcdf and nview 
- - __qgis__ : qgis is an interactive package for geographical data.
+ - __cdo__  : cdo is a tool for working with netcdf and grib files. Other tools are included, such as eccodes, netcdf and nview [cdo tutorial](https://code.mpimet.mpg.de/projects/cdo/wiki/Tutorial)
+ - __qgis__ : qgis is an interactive package for geographical data. [QGIS tutorial](https://www.qgistutorials.com/en/)
+
