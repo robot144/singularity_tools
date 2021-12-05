@@ -1,1 +1,22 @@
 # singularity_tools
+
+## Introduction
+
+Installation of some tools on a linux cluster can be awkward, especially if you o not have root rights. Several very usefull packages, like QGIS, have an enormous amount of dependencies. This makes compilation from source a laborious exercise. Recently, administrators of linux clusters and super computers have in some cases made singularity available. Singularity is a container system, like Docker, but one that you can use if you do not have root rights.
+
+This repository aims to make some tools available using singularity. The main focus of the tools is around geophysical fluid models and satellite data. 
+
+## Installation
+
+There are two ways to work with this repo:
+ 1.  The first is to clone or download the repo and build your own singularity image files (.sif). 
+ 2. The other route is to download the compiles images with singularity, eg `singularity pull library://robot144/cdo`
+
+Next you can unpack the runscripts using something like:
+ 1. `./cdo_latest.sif`
+ 2. `singularity run cdo_latest.sif`
+
+## Packages
+
+The current list of packages is:
+ - __cdo__ : cdo is a tool for working with netcdf and grib files. Other tools are included, such as eccodes, netcdf and nview 
