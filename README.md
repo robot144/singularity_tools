@@ -26,4 +26,5 @@ and add that to the path `export PATH=$PATH:$HOME/bin`. Now you can use cdo like
 ## Packages
 
 The current list of packages is:
- - __cdo__ : cdo is a tool for working with netcdf and grib files. Other tools are included, such as eccodes, netcdf and nview 
+ - __cdo__  : cdo is a tool for working with netcdf and grib files. Other tools are included, such as eccodes, netcdf and nview 
+ - __qgis__ : qgis is an interactive package for geographical data.

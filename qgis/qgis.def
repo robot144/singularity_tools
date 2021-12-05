@@ -1,0 +1,23 @@
+Bootstrap: library
+From: ubuntu:21.04
+#BootStrap: localimage
+#From: ../ubuntu_impish/ubuntu_impish.sif
+# Above takes the long route and a local image that is built from scratch
+# The reason is that cdo and libeccodes are not available on 21.04
+# When ubuntu 21.10 (impish) becomes available, we can simply use the lines below
+#Bootstrap: library
+#From: ubuntu:21.10
+
+%files
+    runscripts /cdo_runscripts
+
+%post
+    export DEBIAN_FRONTEND=noninteractive
+    echo "deb http://us.archive.ubuntu.com/ubuntu hirsute universe" >>/etc/apt/sources.list
+    apt-get update && apt-get install -y qgis
+    apt-get clean
+    #NOW=`date`
+    #echo "export NOW=\"${NOW}\"" >> $SINGULARITY_ENVIRONMENT
+
+%runscript
+    cp /cdo_runscripts/*.* .
