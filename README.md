@@ -15,6 +15,13 @@ There are two ways to work with this repo:
 Next you can unpack the runscripts using something like:
  1. `./cdo_latest.sif`
  2. `singularity run cdo_latest.sif`
+This will create the runscripts in the same folder as the sif file. 
+
+## Using the tools
+
+For the tools that I use a lot, I like to add them to the search path. What I do, is put my sif files and runscripts in `$HOME/bin`
+and add that to the path `export PATH=$PATH:$HOME/bin`. Now you can use cdo like this:
+`cdo.sh info myfile.nc`
 
 ## Packages
 
