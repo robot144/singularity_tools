@@ -32,4 +32,12 @@ and add that to the path `export PATH=$PATH:$HOME/bin`. Now you can use cdo like
 The current list of packages is:
  - __cdo__  : cdo is a tool for working with netcdf and grib files. Other tools are included, such as eccodes, netcdf and nview [cdo tutorial](https://code.mpimet.mpg.de/projects/cdo/wiki/Tutorial)
  - __qgis__ : qgis is an interactive package for geographical data. [QGIS tutorial](https://www.qgistutorials.com/en/)
- - __geoserver__: geoserver is a server for GIS data [geoserver](http://geoserver.org/)
+ - __geoserver__: geoserver is a server for GIS data [geoserver](http://geoserver.org/) It is based on the thinkwhere docker image for geoserver. 
+
+
+## Known issues and quirks
+
+Graphical programs often make use of Qt. On newer kernels Qt makes use of a recent kernel feature, that is not aailable on older kernels. So, when you build an image on ubuntu 21.10 and use is on centos 7, this will creates a crash, for programs like python, qgis and probably many more. Note that centos-7 is still very popular on computational clusters and super computers. I presume that this doesn't happen if you build the image on a system with an older kernel (not teste yet).
+For now, I am using [this workaround](https://stackoverflow.com/questions/58912268/singularity-container-python-pytorch-why-does-import-torch-work-on-arch-l) [and](https://siko1056.github.io/blog/2021/06/10/octave-docker.html). It is working on the systems, where I have used it. The same image works on all systems used so far.
+
+For eample on a local ubuntu system building singulrity images is quite painless. However on a cluster, you will typically not have root rights. You can use the option `--fakeroot` to build images without using `sudo`. Unfortunately, o centos-7 this does not work out of the box. You'll need cooperation from the maintainers of the cluster to get it to work. This page descibes the installation (https://sylabs.io/guides/3.5/admin-guide/user_namespace.html).

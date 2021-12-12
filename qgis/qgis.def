@@ -14,8 +14,11 @@ From: ubuntu:21.04
 %post
     export DEBIAN_FRONTEND=noninteractive
     echo "deb http://us.archive.ubuntu.com/ubuntu hirsute universe" >>/etc/apt/sources.list
-    apt-get update && apt-get install -y qgis
+    apt-get update && apt-get install -y qgis binutils
     apt-get clean
+    # workaround Qt5 use new kernel feature when available. This creates an error on older kernels (eg centos7)
+    # strip is in the binutils package
+    strip --remove-section=.note.ABI-tag /usr/lib/x86_64-linux-gnu/libQt5Core.so.5
     #NOW=`date`
     #echo "export NOW=\"${NOW}\"" >> $SINGULARITY_ENVIRONMENT
 
