@@ -11,6 +11,9 @@ fi
 if [ ! -d logs ];then
 	mkdir logs
 fi
+if [ ! -d work ];then
+	mkdir work
+fi
 
 
 # start server
