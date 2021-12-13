@@ -19,7 +19,7 @@ fi
 # start server
 echo "Starting geoserver"
 echo "Connect to web magement interface using:"
-echo "firefox http://localhost:8080/geoserver"
+echo "chrome http://localhost:8080/geoserver"
 echo "or firefox http://my.server.com:8080/geoserver"
 echo ""
 echo "Default login admin geoserver"
@@ -29,7 +29,7 @@ echo "Connect to WMS or WFS using:"
 echo "http://localhost:8080/geoserver/geonode/wms?"
 echo ""
 echo "Log will appear in terminal"
-echo "Press enter to start serer"
+echo "Press enter to start server"
 read tempvar
 
 singularity run --bind temp:/usr/local/tomcat/temp,geoserver_data:/usr/local/tomcat/webapps/geoserver/data,work:/usr/local/tomcat/work,logs:/usr/local/tomcat/logs  ${SCRIPT_DIR}/geoserver.sif
