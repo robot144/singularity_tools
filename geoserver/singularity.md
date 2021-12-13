@@ -7,11 +7,14 @@ These scripts automate the generation of a singularity image for geoserver. The 
 
 ## Concept
 
-The docker version for geoserver can be downloaded directly using: 
+The docker version for geoserver can be downloaded directly using:
 `singularity pull docker://thinkwhere/geoserver`
-However, geoserver will try to 
+However, geoserver will try to
 
 ## Recipe
+
+To run singularity on the H6c7:
+- `module load singularity/3.8.0`
 
 Here are some steps to build and start geoserver:
 - `./build.sh`
@@ -22,3 +25,7 @@ Here are some steps to build and start geoserver:
 To download the singularity image and run geoserver anywhere:
 - `singularity pull library://robot144/default/geoserver:latest`
 - `singularity exec geoserver.sif cp /geoserver_runscripts`
+
+Alternatively, all the steps have been put in a bash script. Simple run:
+- `. download.sh`
+- `. ./runscripts/geoserver.sh`
