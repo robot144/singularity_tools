@@ -32,4 +32,4 @@ echo "Log will appear in terminal"
 echo "Press enter to start server"
 read tempvar
 
-singularity run --bind temp:/usr/local/tomcat/temp,geoserver_data:/usr/local/tomcat/webapps/geoserver/data,work:/usr/local/tomcat/work,logs:/usr/local/tomcat/logs  ${SCRIPT_DIR}/geoserver.sif
+singularity run --bind temp:/usr/local/tomcat/temp,geoserver_data:/opt/geoserver/data_dir,work:/usr/local/tomcat/work,logs:/usr/local/tomcat/logs  ${SCRIPT_DIR}/geoserver.sif

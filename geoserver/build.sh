@@ -8,3 +8,7 @@ if [ ! -d "build" ];then
 fi
 
 $SINGBIN build --fakeroot "build/${IMAGENAME}.sif" "${IMAGENAME}.def"
+
+
+# extract script
+singularity exec build/"${IMAGENAME}.sif" cp /geoserver_runscripts/geoserver.sh build/
