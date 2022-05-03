@@ -9,11 +9,11 @@ These scripts automate the generation of a singularity image for geoserver. The 
 
 The docker version for geoserver can be downloaded directly using:
 `singularity pull docker://thinkwhere/geoserver`
-However, geoserver will try to
+However, geoserver (also through tomcat) will try to log and cache files. This does not work well in singularity. As a workaround these folders are now bound from the host system.
 
 ## Recipe
 
-To run singularity on the H6c7:
+To run singularity on the Deltares H6c7:
 - `module load singularity/3.8.0`
 
 Here are some steps to build and start geoserver:
